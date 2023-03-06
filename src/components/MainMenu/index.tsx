@@ -11,7 +11,7 @@ import {
   GameRulesBtn, 
 } from './styles';
 
-const HomeMenu = () => {
+const MainMenu = () => {
   return (
     <ScreenWrapper>
       <MenuWrapper>
@@ -35,4 +35,4 @@ const HomeMenu = () => {
   );
 };
 
-export default HomeMenu;
+export default MainMenu;

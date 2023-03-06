@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import HomeMenu from './components/HomeMenu';
+import MainMenu from './components/MainMenu';
 import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
-      <HomeMenu />
-    </div>
+    <>
+      <MainMenu />
+    </>
   );
 };
 
