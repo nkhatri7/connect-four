@@ -1,4 +1,5 @@
 import { Stack } from '@mui/material';
+import GameRules from '../GameRules';
 import Logo from '../Logo';
 import ScreenWrapper from '../ScreenWrapper';
 import { 
@@ -12,9 +13,13 @@ import {
 } from './styles';
 
 const MainMenu = () => {
+  const showGameRules = () => {
+    document.body.setAttribute('data-rules', 'true');
+  };
+
   return (
     <ScreenWrapper>
-      <MenuWrapper>
+      <MenuWrapper className='main-menu-wrapper'>
         <MenuSection>
           <MenuBox>
             <Stack spacing='60px'>
@@ -22,13 +27,13 @@ const MainMenu = () => {
               <MenuBtnContainer spacing='24px'>
                 <PlayCpuBtn>Play vs CPU</PlayCpuBtn>
                 <PlayPlayerBtn>Play vs Player</PlayPlayerBtn>
-                <GameRulesBtn>Game Rules</GameRulesBtn>
+                <GameRulesBtn onClick={showGameRules}>Game Rules</GameRulesBtn>
               </MenuBtnContainer>
             </Stack>
           </MenuBox>
         </MenuSection>
         <MenuSection>
-          
+          <GameRules />
         </MenuSection>
       </MenuWrapper>
     </ScreenWrapper>

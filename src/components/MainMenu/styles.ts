@@ -2,14 +2,20 @@ import { Box, Stack, styled } from "@mui/material";
 import PlayCpuIcon from '../../assets/images/player-vs-cpu.svg';
 import PlayPlayerIcon from '../../assets/images/player-vs-player.svg';
 
-const MenuWrapper = styled('div')(() => ({
-  height: '200%',
-  transition: 'translate var(--transition-time)',
-}));
+const MenuWrapper = styled(Stack)`
+  height: 200%;
+  transition: all var(--transition-time);
+  background-color: var(--purple);
+  padding: 0 10px;
+  @media screen and (min-width: 500px) {
+    background-color: var(--dark-purple);
+  }
+`;
 
 const MenuSection = styled(Stack)(() => ({
   height: '50%',
   justifyContent: 'center',
+  alignItems: 'center',
 }));
 
 const MenuBox = styled(Box)`

@@ -40,6 +40,11 @@ body {
   overflow: hidden;
 }
 
+body[data-rules='true'] .main-menu-wrapper {
+  translate: 0 -50%;
+  background-color: var(--purple);
+}
+
 button {
   font-family: 'SpaceGrotesk', sans-serif;
 }
