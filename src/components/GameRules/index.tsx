@@ -35,7 +35,7 @@ const GameRules = () => {
             The game ends when there is a 4-in-a-row or a stalemate.
           </RulesListItem>
           <RulesListItem>
-            The started of the previous game goes second on the the next game.
+            The started of the previous game goes second on the next game.
           </RulesListItem>
         </RulesList>
         <DoneBtn onClick={hideGameRules}></DoneBtn>
