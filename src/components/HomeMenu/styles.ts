@@ -1,25 +1,36 @@
-import { Box, styled } from "@mui/material";
+import { Box, Stack, styled } from "@mui/material";
 import PlayCpuIcon from '../../assets/images/player-vs-cpu.svg';
 import PlayPlayerIcon from '../../assets/images/player-vs-player.svg';
 
-const HomeMenuBox = styled(Box)`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
+const MenuWrapper = styled('div')(() => ({
+  height: '200%',
+  transition: 'translate var(--transition-time)',
+}));
+
+const MenuSection = styled(Stack)(() => ({
+  height: '50%',
+  justifyContent: 'center',
+}));
+
+const MenuBox = styled(Box)`
+  width: 100%;
   max-width: 480px;
+  background-color: var(--purple);
   @media screen and (min-width: 500px) {
-    background-color: var(--purple);
     padding: 47px 37px;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-time);
     border-radius: 40px;
     border: 3px solid #000000;
     box-shadow: 0 10px #000000;
   }
 `;
 
-const HomeMenuBtn = styled('button')`
+const MenuBtnContainer = styled(Stack)(() => ({
+  width: '100%',
+  padding: '0 10px',
+}));
+
+const MenuBtn = styled('button')`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -47,7 +58,7 @@ const HomeMenuBtn = styled('button')`
   }
 `;
 
-const PlayCpuBtn = styled(HomeMenuBtn)`
+const PlayCpuBtn = styled(MenuBtn)`
   background-color: var(--red);
   color: #FFFFFF;
   &::after {
@@ -55,7 +66,7 @@ const PlayCpuBtn = styled(HomeMenuBtn)`
   }
 `;
 
-const PlayPlayerBtn = styled(HomeMenuBtn)`
+const PlayPlayerBtn = styled(MenuBtn)`
   background-color: var(--yellow);
   color: #000000;
   &::after {
@@ -63,9 +74,17 @@ const PlayPlayerBtn = styled(HomeMenuBtn)`
   }
 `;
 
-const GameRulesBtn = styled(HomeMenuBtn)(() => ({
+const GameRulesBtn = styled(MenuBtn)(() => ({
   backgroundColor: '#FFFFFF',
   color: '#000000',
 }));
 
-export { HomeMenuBox, PlayCpuBtn, PlayPlayerBtn, GameRulesBtn };
+export { 
+  MenuWrapper,
+  MenuSection,
+  MenuBox, 
+  MenuBtnContainer,
+  PlayCpuBtn, 
+  PlayPlayerBtn, 
+  GameRulesBtn,
+};
